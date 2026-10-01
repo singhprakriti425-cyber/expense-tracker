@@ -1,0 +1,1372 @@
+/* ================= ROOT ================= */
+
+:root {
+
+    --bg: #fff7fb;
+    --card: #ffffff;
+    --text: #493b45;
+    --muted: #8d7c87;
+
+    --pink: #e9a6c3;
+    --pink-dark: #d783aa;
+    --pink-light: #ffe8f1;
+
+    --border: #f2dbe5;
+
+    --shadow:
+        0 10px 30px rgba(190, 130, 160, 0.12);
+
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+
+    --bg: #211c22;
+    --card: #2c252e;
+    --text: #f8eaf1;
+    --muted: #bbaab5;
+
+    --pink: #d994b6;
+    --pink-dark: #c57da1;
+    --pink-light: #49333f;
+
+    --border: #463640;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ================= BASIC ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+
+.page {
+
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.hero {
+
+    margin-top: 25px;
+
+    min-height: 260px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe7f1,
+            #fff6fa
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 50px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.dark .hero {
+
+    background:
+        linear-gradient(
+            135deg,
+            #392d36,
+            #2a242b
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+.mini-title {
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 6vw, 60px);
+
+    margin: 10px 0;
+
+}
+
+
+.subtitle {
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+}
+
+
+/* ================= FLOATING OBJECTS ================= */
+
+.floating-items span {
+
+    position: absolute;
+
+}
+
+
+.coin {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #f5c6d9;
+
+    color: #8d526d;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    box-shadow: 0 5px 15px rgba(180, 100, 140, .2);
+
+}
+
+
+.coin1 {
+
+    right: 30%;
+
+    top: 25%;
+
+    animation: floatOne 4s ease-in-out infinite;
+
+}
+
+
+.coin2 {
+
+    right: 8%;
+
+    bottom: 20%;
+
+    animation: floatTwo 5s ease-in-out infinite;
+
+}
+
+
+.flower {
+
+    right: 15%;
+
+    top: 15%;
+
+    font-size: 45px;
+
+    animation: flowerSpin 7s linear infinite;
+
+}
+
+
+.sparkle1 {
+
+    right: 40%;
+
+    top: 15%;
+
+    font-size: 30px;
+
+    animation: sparkle 2s ease-in-out infinite;
+
+}
+
+
+.sparkle2 {
+
+    right: 7%;
+
+    top: 45%;
+
+    font-size: 25px;
+
+    animation: sparkle 3s ease-in-out infinite;
+
+}
+
+
+.floating-wallet {
+
+    position: absolute;
+
+    right: 20%;
+
+    bottom: 20%;
+
+    font-size: 70px;
+
+    animation: walletFloat 4s ease-in-out infinite;
+
+}
+
+
+.tiny-card {
+
+    position: absolute;
+
+    right: 5%;
+
+    top: 18%;
+
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+
+    box-shadow: var(--shadow);
+
+    animation: cardFloat 5s ease-in-out infinite;
+
+}
+
+
+/* ================= THEME BUTTON ================= */
+
+.theme-btn {
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: white;
+
+    font-size: 20px;
+
+    z-index: 10;
+
+    transition: transform .3s;
+
+}
+
+
+.theme-btn:hover {
+
+    transform: rotate(20deg) scale(1.1);
+
+}
+
+
+/* ================= MONTH ================= */
+
+.month-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin: 40px 0 25px;
+
+    text-align: center;
+
+}
+
+
+.month-small {
+
+    color: var(--pink-dark);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.month-section h2 {
+
+    font-family: Georgia, serif;
+
+    margin: 4px 0;
+
+    font-size: 30px;
+
+}
+
+
+.month-arrow {
+
+    border: none;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow);
+
+    font-size: 20px;
+
+    transition: .3s;
+
+}
+
+
+.month-arrow:hover {
+
+    transform: scale(1.12);
+
+    background: var(--pink-light);
+
+}
+
+
+/* ================= SUMMARY ================= */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.summary-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow: var(--shadow);
+
+    transition: .3s;
+
+}
+
+
+.summary-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.card-icon {
+
+    font-size: 35px;
+
+}
+
+
+.summary-card p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+}
+
+
+.summary-card h2 {
+
+    margin: 5px 0 0;
+
+}
+
+
+/* ================= EMOTION ================= */
+
+.emotion-card {
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: var(--pink-light);
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+    animation: slideUp .6s ease;
+
+}
+
+
+.emotion-emoji {
+
+    font-size: 65px;
+
+    animation: emotionBounce 1.5s ease-in-out infinite;
+
+}
+
+
+.emotion-label {
+
+    color: var(--pink-dark);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.emotion-card h2 {
+
+    margin: 5px 0;
+
+}
+
+
+.emotion-card p {
+
+    color: var(--muted);
+
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    margin-top: 25px;
+
+    box-shadow: var(--shadow);
+
+    animation: slideUp .6s ease;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 5px 0 0;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.section-mini {
+
+    color: var(--pink-dark);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin: 0;
+
+}
+
+
+.calendar-note {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+/* ================= CALENDAR ================= */
+
+.calendar-weekdays {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.calendar {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.calendar-day {
+
+    min-height: 75px;
+
+    padding: 10px;
+
+    border-radius: 15px;
+
+    background: var(--bg);
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    position: relative;
+
+}
+
+
+.calendar-day:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--pink-light);
+
+}
+
+
+.calendar-day.empty {
+
+    background: transparent;
+
+    cursor: default;
+
+}
+
+
+.day-number {
+
+    font-weight: bold;
+
+}
+
+
+.day-expense {
+
+    position: absolute;
+
+    bottom: 8px;
+
+    left: 10px;
+
+    right: 10px;
+
+    font-size: 11px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.calendar-day.has-expense {
+
+    border: 1px solid var(--pink);
+
+}
+
+
+.calendar-day.selected {
+
+    background: var(--pink-light);
+
+    box-shadow:
+        0 0 0 2px var(--pink);
+
+}
+
+
+.selected-day {
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    background: var(--bg);
+
+    border-radius: 15px;
+
+    color: var(--muted);
+
+}
+
+
+/* ================= FORM ================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.input-group.full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.input-group label {
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    border: 1px solid var(--border);
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: var(--pink);
+
+}
+
+
+.add-btn {
+
+    margin-top: 20px;
+
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 14px;
+
+    background: var(--pink);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+
+.add-btn:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--pink-dark);
+
+}
+
+
+/* ================= CHART ================= */
+
+.chart {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.chart-row {
+    margin: 15px 0;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.bar-bg {
+    width: 100%;
+    height: 12px;
+    background: #f8dce8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: #e88bb2;
+    border-radius: 20px;
+    transition: width 1s ease;
+}
+
+
+
+.chart-value {
+
+    text-align: right;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+/* ================= TIP ================= */
+
+.tip-card {
+
+    margin-top: 25px;
+
+    background: var(--pink-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+
+}
+
+
+.tip-icon {
+
+    font-size: 45px;
+
+    animation: wiggle 2s infinite;
+
+}
+
+
+.tip-card h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+}
+
+
+/* ================= TRANSACTIONS ================= */
+
+.transaction-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.transaction {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: var(--bg);
+
+    animation: transactionIn .5s ease;
+
+}
+
+
+.transaction-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.transaction-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: var(--pink-light);
+
+}
+
+
+.transaction-name {
+
+    font-weight: 600;
+
+}
+
+
+.transaction-date {
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+}
+
+
+.expense-amount {
+
+    color: #d36d8f;
+
+}
+
+
+.income-amount {
+
+    color: #62a77c;
+
+}
+
+
+.delete-btn {
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    margin-left: 10px;
+
+    font-size: 16px;
+
+}
+
+
+/* ================= HISTORY ================= */
+
+.history-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.history-item {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: var(--bg);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.history-item:hover {
+
+    transform: translateX(5px);
+
+}
+
+
+.history-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.history-stats {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+/* ================= RESET ================= */
+
+.reset-section {
+
+    text-align: center;
+
+    margin-top: 40px;
+
+}
+
+
+.reset-btn {
+
+    border: 1px solid var(--pink);
+
+    background: transparent;
+
+    color: var(--pink-dark);
+
+    padding: 13px 25px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+
+.reset-btn:hover {
+
+    background: var(--pink-light);
+
+    transform: rotate(-2deg) scale(1.04);
+
+}
+
+
+.reset-section p {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+.empty {
+
+    text-align: center;
+
+    color: var(--muted);
+
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes floatOne {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+
+@keyframes floatTwo {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+
+@keyframes walletFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+
+@keyframes cardFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
+}
+
+
+@keyframes flowerSpin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: .3;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+@keyframes emotionBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes transactionIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes growBar {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+@keyframes wiggle {
+
+    0%, 100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(8deg);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        padding: 35px 25px;
+
+        min-height: 300px;
+
+    }
+
+
+    .floating-items {
+
+        opacity: .5;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .input-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .calendar-day {
+
+        min-height: 60px;
+
+        padding: 7px;
+
+    }
+
+
+    .day-expense {
+
+        font-size: 9px;
+
+        left: 5px;
+
+    }
+
+
+    .calendar-note {
+
+        display: none;
+
+    }
+
+
+    .section-card {
+
+        padding: 20px;
+
+    }
+
+
+    .chart-row {
+
+        grid-template-columns: 80px 1fr 65px;
+
+    }
+
+}

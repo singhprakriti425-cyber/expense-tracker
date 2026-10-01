@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Expense Tracker</title>
+
+    <link rel="stylesheet" href="expense.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+            <p class="mini-title">✦ YOUR LITTLE MONEY SPACE ✦</p>
+
+            <h1>My Expense Tracker ♡</h1>
+
+            <p class="subtitle">
+                Understand your money. Spend smarter.
+            </p>
+        </div>
+
+        <div class="floating-items">
+
+            <span class="coin coin1">₹</span>
+            <span class="coin coin2">₹</span>
+            <span class="flower">🌸</span>
+            <span class="sparkle sparkle1">✦</span>
+            <span class="sparkle sparkle2">✧</span>
+
+            <div class="floating-wallet">
+                👛
+            </div>
+
+            <div class="tiny-card">
+                💰 Save more
+            </div>
+
+        </div>
+
+        <button id="themeToggle" class="theme-btn">
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- ================= MONTH SELECTOR ================= -->
+
+    <section class="month-section">
+
+        <button id="prevMonth" class="month-arrow">
+            ←
+        </button>
+
+        <div>
+            <p class="month-small">TRACKING</p>
+            <h2 id="currentMonth">September 2026</h2>
+        </div>
+
+        <button id="nextMonth" class="month-arrow">
+            →
+        </button>
+
+    </section>
+
+
+    <!-- ================= SUMMARY ================= -->
+
+    <section class="summary-grid">
+
+        <div class="summary-card income-card">
+            <span class="card-icon">💵</span>
+
+            <div>
+                <p>Income</p>
+                <h2 id="totalIncome">₹0</h2>
+            </div>
+        </div>
+
+
+        <div class="summary-card expense-card">
+            <span class="card-icon">💸</span>
+
+            <div>
+                <p>Expenses</p>
+                <h2 id="totalExpense">₹0</h2>
+            </div>
+        </div>
+
+
+        <div class="summary-card balance-card">
+            <span class="card-icon">🏦</span>
+
+            <div>
+                <p>Remaining</p>
+                <h2 id="remainingBalance">₹0</h2>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= EMOTION ================= -->
+
+    <section class="emotion-card" id="emotionCard">
+
+        <div id="emotionEmoji" class="emotion-emoji">
+            🥰
+        </div>
+
+        <div>
+            <p class="emotion-label">YOUR WALLET SAYS...</p>
+
+            <h2 id="emotionTitle">
+                Let's see how you did this month.
+            </h2>
+
+            <p id="emotionMessage">
+                Add some transactions and I'll judge your spending lovingly. 😌
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALENDAR ================= -->
+
+    <section class="section-card">
+
+        <div class="section-heading">
+            <div>
+                <p class="section-mini">YOUR MONTH</p>
+                <h2>🗓️ Expense Calendar</h2>
+            </div>
+
+            <span class="calendar-note">
+                Click a day to see spending
+            </span>
+        </div>
+
+
+        <div class="calendar-weekdays">
+
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+
+        </div>
+
+
+        <div id="calendar" class="calendar"></div>
+
+
+        <div id="selectedDay" class="selected-day">
+            Select a date to see its expenses.
+        </div>
+
+    </section>
+
+
+    <!-- ================= ADD TRANSACTION ================= -->
+
+    <section class="section-card">
+
+        <div class="section-heading">
+            <div>
+                <p class="section-mini">ADD MONEY ACTIVITY</p>
+                <h2>➕ New Transaction</h2>
+            </div>
+        </div>
+
+
+        <form id="expenseForm">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Amount</label>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="₹ 500"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Type</label>
+
+                    <select id="type">
+
+                        <option value="expense">
+                            Expense 💸
+                        </option>
+
+                        <option value="income">
+                            Income 💵
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Category</label>
+
+                    <select id="category">
+
+                        <option>Food</option>
+                        <option>Travel</option>
+                        <option>Shopping</option>
+                        <option>Education</option>
+                        <option>Bills</option>
+                        <option>Entertainment</option>
+                        <option>Health</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>Description</label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="What did you spend on?"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button class="add-btn" type="submit">
+                Add Transaction ✨
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= CHART ================= -->
+
+    <section class="section-card">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-mini">WHERE DID IT GO?</p>
+                <h2>📊 Expense Breakdown</h2>
+            </div>
+
+        </div>
+
+
+        <div id="chart" class="chart"></div>
+
+    </section>
+
+
+    <!-- ================= MONEY TIP ================= -->
+
+    <section class="tip-card">
+
+        <div class="tip-icon">
+            🧠
+        </div>
+
+        <div>
+
+            <p class="section-mini">
+                YOUR PERSONAL MONEY TIP
+            </p>
+
+            <h2 id="moneyTip">
+                Add some expenses and I'll have something to say. 👀
+            </h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HISTORY ================= -->
+
+    <section class="section-card">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-mini">YOUR MONEY DIARY</p>
+                <h2>📚 Expense History</h2>
+            </div>
+
+        </div>
+
+
+        <div id="historyList" class="history-list"></div>
+
+    </section>
+
+
+    <!-- ================= CURRENT TRANSACTIONS ================= -->
+
+    <section class="section-card">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-mini">THIS MONTH</p>
+                <h2>🧾 Transactions</h2>
+            </div>
+
+        </div>
+
+
+        <div id="transactionList" class="transaction-list">
+
+            <p class="empty">
+                No transactions yet 🌸
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESET ================= -->
+
+    <section class="reset-section">
+
+        <button id="resetMonth" class="reset-btn">
+            ↻ Start New Month
+        </button>
+
+        <p>
+            Your old transactions will stay safely in History.
+        </p>
+
+    </section>
+
+
+</div>
+
+
+<script src="expense.js"></script>
+
+</body>
+</html>
